@@ -12,15 +12,7 @@ const {
 class Query {
     result = "";
 
-    add(q, type) {
-        if (!this.result.includes(where) && this.result.includes("select")) {
-            result += where;
-        }
-
-        if (type) {
-            this.result += type.toUpperCase();
-        }
-
+    add(q) {
         this.result += q;
     }
 }
