@@ -15,6 +15,14 @@ const { initDbConn } = require("./db/connect");
 initDbConn(); // init database connection
 app.use("/api", apiRouter); // all `{host}/api` routes will use the apiRouter
 
+// Register
+const newUser = require('./routers/newUser')
+app.post('/newuser', newUser.routehandlerFunction)
+
+// Log in - confirm if user_name and email already exist in database
+const logIn = require('./routers/logIn');
+app.get('/login', logIn.routehandlerFunction)
+
 // Filter for user orders in database
 const userOrders = require('./routers/userOrders')
 app.get('/userorders', userOrders.routeHandlerFunction)
