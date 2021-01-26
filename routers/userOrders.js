@@ -15,6 +15,7 @@ const routeHandlerFunction = async (req, res) => {
     TREES.tree_species, 
     TREES.country, 
     TREES.growth_rate, 
+    TREES.size_max, 
     TREES.price, 
     TREES.co2_emissions, 
     TREES.land_area, 

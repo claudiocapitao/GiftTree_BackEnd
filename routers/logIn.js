@@ -21,10 +21,8 @@ const routehandlerFunction = async (req, res) => {
             }
         }
 
-        console.log(canUserLogIn)
-
         res.status(200);
-        res.json({ canUserLogIn });
+        res.json({ canUserLogIn, user_id: resultsEmail[0].USER_ID });
     } catch {
         (e) => {
             console.log(e);
