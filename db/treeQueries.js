@@ -1,8 +1,18 @@
 const { db } = require("./connect");
 
-const selectAll = "SELECT * FROM TREE";
+const selectAll = "SELECT * FROM TREES";
 const where = " WHERE ";
 const and = " AND ";
-const addFilter = (type, val) => `${db.escape(type)}=${db.escape(val)}`;
+const equal = (key, val) => `${key}=${db.escape(val)}`;
+const lessOrEqual = (key, val) => `${key}<=${db.escape(val)}`;
+const moreOrEqual = (key, val) => `${key}>=${db.escape(val)}`;
 
-module.exports = { selectAll, where, and, addFilter, db };
+module.exports = {
+    selectAll,
+    where,
+    and,
+    equal,
+    db,
+    lessOrEqual,
+    moreOrEqual,
+};

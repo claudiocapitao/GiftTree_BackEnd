@@ -9,11 +9,10 @@ const port = process.env.PORT || 8080;
 app.use(express.json());
 app.use(cors());
 
-
 // Filter Trees
 const { initDbConn } = require("./db/connect");
 initDbConn(); // init database connection
-app.use("/api", apiRouter); // all `{host}/api` routes will use the apiRouter
+app.use("/trees", apiRouter); // all `{host}/api` routes will use the apiRouter
 
 // Register
 const newUser = require('./routers/newUser')
@@ -27,6 +26,9 @@ app.get('/login', logIn.routehandlerFunction)
 const userOrders = require('./routers/userOrders')
 app.get('/userorders', userOrders.routeHandlerFunction)
 
+// Filter for user orders in database
+const saveNewOrder = require('./routers/saveNewOrder')
+app.post('/userorders', saveNewOrder.routeHandlerFunction)
 
 app.listen(port);
 console.log(`Server running on port ${port}`);
