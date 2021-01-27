@@ -7,7 +7,7 @@ initDbConn(); // init database connection
 
 app.use(cors());
 
-app.use("/api", apiRouter); // all `{host}/api` routes will use the apiRouter
+app.use("/", apiRouter); // all `{host}/api` routes will use the apiRouter
 
 const PORT = 8080;
 app.listen(PORT);

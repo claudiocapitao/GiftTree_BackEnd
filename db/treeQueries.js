@@ -1,6 +1,6 @@
 const { db } = require("./connect");
 
-const selectAll = "SELECT * FROM TREE";
+const selectAll = "SELECT * FROM TREES";
 const where = " WHERE ";
 const and = " AND ";
 const equal = (key, val) => `${key}=${db.escape(val)}`;
